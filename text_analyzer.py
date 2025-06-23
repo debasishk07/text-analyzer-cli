@@ -18,4 +18,12 @@ def check_file(filepath):
         print(f"The file '{filepath}' is empty.")
         return
     
-    
+    lines = contents.splitlines()
+    line_count = len(lines)
+    print(f" Total lines : {line_count}")
+
+
+    words = [remove_punctuations(word) for line in lines for word in line.split()]
+    words = list(filter(None,words)) # to remove empty words
+    count_words = len(words)
+    print(f" Total Words: {count_words}")
