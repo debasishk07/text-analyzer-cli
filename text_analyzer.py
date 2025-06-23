@@ -27,3 +27,15 @@ def check_file(filepath):
     words = list(filter(None,words)) # to remove empty words
     count_words = len(words)
     print(f" Total Words: {count_words}")
+
+    char_count_with_spaces = len(contents)
+    print(f"Total characters with spaces : {char_count_with_spaces}")
+
+    char_without_spaces = len(contents.replace(" ","").replace("\n",""))
+    print(f"Character without spaces : {char_without_spaces}")
+
+    print(f" Top 3 most Frequent words are : ")
+    word_freq = Counter(words).most_common(3)
+    for word, count in word_freq:
+        print(f"  -{word}: {count}")
+    
