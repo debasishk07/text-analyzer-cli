@@ -39,3 +39,13 @@ def check_file(filepath):
     for word, count in word_freq:
         print(f"  -{word}: {count}")
     
+# Bonus findings
+    print(f" The average line length : {char_count_with_spaces/line_count:.2f}")
+    print(f"\n average word length is : {sum(len(w) for w in words)/count_words:.2f}")
+
+
+if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        print("usage: python text_analyzer.py <file.txt>")
+    else:
+        check_file(sys.argv[1])
